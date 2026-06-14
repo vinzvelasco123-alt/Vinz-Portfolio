@@ -1,35 +1,40 @@
-/* =========================
-   SMOOTH SCROLL
-========================= */
+// TYPEWRITER EFFECT
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const text = "Professional Virtual Assistant";
+let i = 0;
 
-    anchor.addEventListener('click', function(e){
+function typingEffect() {
 
-        e.preventDefault();
+    if (i < text.length) {
 
-        document.querySelector(
-            this.getAttribute('href')
-        ).scrollIntoView({
-            behavior: 'smooth'
-        });
+        document.querySelector(".typing").innerHTML += text.charAt(i);
 
-    });
+        i++;
 
-});
+        setTimeout(typingEffect, 80);
+
+    }
+
+}
+
+typingEffect();
 
 
-/* =========================
-   SCROLL REVEAL ANIMATION
-========================= */
+// SCROLL REVEAL
 
-const observer = new IntersectionObserver((entries)=>{
+const reveals = document.querySelectorAll(".reveal");
 
-    entries.forEach((entry)=>{
+window.addEventListener("scroll", () => {
 
-        if(entry.isIntersecting){
+    reveals.forEach((element) => {
 
-            entry.target.classList.add('show');
+        const windowHeight = window.innerHeight;
+
+        const revealTop = element.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - 100) {
+
+            element.classList.add("active");
 
         }
 
@@ -37,38 +42,21 @@ const observer = new IntersectionObserver((entries)=>{
 
 });
 
-const hiddenElements =
-document.querySelectorAll('.card');
 
-hiddenElements.forEach((el)=>{
+// ACTIVE NAVIGATION
 
-    el.classList.add('hidden');
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
 
-    observer.observe(el);
-
-});
-
-
-/* =========================
-   NAVBAR ACTIVE LINK
-========================= */
-
-const sections =
-document.querySelectorAll("section");
-
-const navLinks =
-document.querySelectorAll(".menu a");
-
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
     let current = "";
 
-    sections.forEach(section=>{
+    sections.forEach(section => {
 
-        const sectionTop =
-        section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 150;
 
-        if(pageYOffset >= sectionTop){
+        if (pageYOffset >= sectionTop) {
 
             current = section.getAttribute("id");
 
@@ -76,15 +64,14 @@ window.addEventListener("scroll",()=>{
 
     });
 
-    navLinks.forEach(link=>{
+    navLinks.forEach(link => {
 
-        link.classList.remove("active");
+        link.classList.remove("current");
 
-        if(
-            link.getAttribute("href")
-            .includes(current)
-        ){
-            link.classList.add("active");
+        if (link.getAttribute("href").includes(current)) {
+
+            link.classList.add("current");
+
         }
 
     });
@@ -92,58 +79,16 @@ window.addEventListener("scroll",()=>{
 });
 
 
-/* =========================
-   HERO BUTTON EFFECT
-========================= */
+// HERO FLOATING EFFECT
 
-const buttons =
-document.querySelectorAll('.btn');
+const heroImage = document.querySelector(".hero-image img");
 
-buttons.forEach(btn => {
+window.addEventListener("mousemove", (e) => {
 
-    btn.addEventListener('mouseenter', () => {
+    const x = (window.innerWidth / 2 - e.pageX) / 50;
+    const y = (window.innerHeight / 2 - e.pageY) / 50;
 
-        btn.style.transform =
-        'translateY(-5px) scale(1.05)';
-
-    });
-
-    btn.addEventListener('mouseleave', () => {
-
-        btn.style.transform =
-        'translateY(0) scale(1)';
-
-    });
+    heroImage.style.transform =
+        `translate(${x}px, ${y}px)`;
 
 });
-
-
-/* =========================
-   TYPEWRITER EFFECT
-========================= */
-
-const text =
-"Professional Virtual Assistant";
-
-let index = 0;
-
-const typeTarget =
-document.querySelector(".typing");
-
-if(typeTarget){
-
-    function typeWriter(){
-
-        if(index < text.length){
-
-            typeTarget.innerHTML +=
-            text.charAt(index);
-
-            index++;
-
-            setTimeout(typeWriter,80);
-        }
-    }
-
-    typeWriter();
-}
