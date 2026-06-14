@@ -19,7 +19,7 @@
 
     <header>
         <nav class="glass">
-            <h2 class="logo">VA Portfolio</h2>
+            <h2 class="logo"></h2>
 
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -56,18 +56,34 @@
                         Hire Me
                     </a>
 
-                    <a href="assets/documents/Resume.pdf"
+                    <a href="assets/Resume1.pdf"
                         class="btn secondary"
-                        download>
-                        Download Resume
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Resume
                     </a>
 
+                </div>
+
+                <div class="hero-decorations">
+                    <div class="decor-card">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <p>Remote Work</p>
+                    </div>
+                    <div class="decor-card">
+                        <i class="fa-brands fa-facebook"></i>
+                        <p>Social Media Support</p>
+                    </div>
+                    <div class="decor-card">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p>Research & Data</p>
+                    </div>
                 </div>
 
             </div>
 
             <div class="hero-image">
-                <img src="assets/images/Profile.jpg" alt="Profile">
+                <img src="assets/Profile.png" alt="Profile">
             </div>
 
         </div>
@@ -168,17 +184,17 @@
 
         <div class="glass card reveal">
 
-            <ul>
+            <ul class="training-list">
 
-                <li>Virtual Assistant Fundamentals Training (2025)</li>
+                <li class="training-item">Virtual Assistant Fundamentals Training (2025)</li>
 
-                <li>Social Media Management for Virtual Assistants (2025)</li>
+                <li class="training-item">Social Media Management for Virtual Assistants (2025)</li>
 
-                <li>Google Workspace Productivity Training (2025)</li>
+                <li class="training-item">Google Workspace Productivity Training (2025)</li>
 
-                <li>Customer Service Excellence Webinar (2025)</li>
+                <li class="training-item">Customer Service Excellence Webinar (2025)</li>
 
-                <li>Data Entry and Internet Research Workshop (2025)</li>
+                <li class="training-item">Data Entry and Internet Research Workshop (2025)</li>
 
             </ul>
 
@@ -190,30 +206,41 @@
 
     <section id="contact">
 
-        <div class="glass card reveal">
+        <div class="glass card reveal contact-card">
 
             <h2>Contact Me</h2>
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                Vinzvelasco321@gmail.com
-            </p>
-
-            <p>
+            <p class="contact-note">
                 <i class="fa-solid fa-phone"></i>
                 +63 905 665 8195
             </p>
 
-            <div class="socials">
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xvzndbon" method="POST">
 
-                <a href="mailto:Vinzvelasco321@gmail.com">
+                
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Your email" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Tell me about your project</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Describe your project..." required></textarea>
+                </div>
+                <div id="form-status" class="form-status"></div>
+                <button type="submit" class="btn secondary">Send Message</button>
+            </form>
+
+            <div class="socials">
+                <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer noopener">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
-
                 <a href="https://www.facebook.com/vinz.velasco.148782">
                     <i class="fab fa-facebook"></i>
                 </a>
-
             </div>
 
         </div>
