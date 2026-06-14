@@ -1,299 +1,225 @@
-/* =========================
-   GOOGLE FONT
-========================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    min-height:100vh;
-    background:linear-gradient(
-        135deg,
-        #f4f9ff,
-        #ffffff,
-        #eaf4ff
-    );
-    color:#222;
-    overflow-x:hidden;
+background:linear-gradient(135deg,#eef7ff,#ffffff);
+color:#222;
+overflow-x:hidden;
 }
 
-/* =========================
-   GLASS EFFECT
-========================= */
+.bg-circle{
+position:fixed;
+border-radius:50%;
+filter:blur(120px);
+z-index:-1;
+}
+
+.one{
+width:400px;
+height:400px;
+background:#6cb8ff;
+top:-100px;
+left:-100px;
+}
+
+.two{
+width:300px;
+height:300px;
+background:#9fd3ff;
+right:-50px;
+bottom:-50px;
+}
 
 .glass{
-    background:rgba(255,255,255,0.25);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.4);
-    box-shadow:0 8px 32px rgba(31,38,135,0.12);
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.3);
+box-shadow:0 8px 32px rgba(0,0,0,.08);
 }
-
-/* =========================
-   NAVBAR
-========================= */
 
 nav{
-    position:fixed;
-    width:90%;
-    left:50%;
-    transform:translateX(-50%);
-    top:20px;
-    z-index:1000;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:15px 30px;
-    border-radius:20px;
+width:90%;
+margin:20px auto;
+padding:20px 30px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:10px;
+z-index:1000;
 }
 
-.logo{
-    font-size:1.5rem;
-    font-weight:700;
-    color:#2684ff;
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
 }
 
-.menu{
-    display:flex;
-    gap:25px;
+nav a{
+text-decoration:none;
+color:#222;
+font-weight:500;
 }
-
-.menu a{
-    text-decoration:none;
-    color:#333;
-    font-weight:500;
-    transition:0.3s;
-}
-
-.menu a:hover{
-    color:#2684ff;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px;
 }
 
-.hero-card{
-    max-width:900px;
-    text-align:center;
-    padding:60px;
-    border-radius:30px;
-    animation:float 5s ease-in-out infinite;
+.hero-content{
+display:flex;
+gap:50px;
+padding:50px;
+border-radius:30px;
+max-width:1200px;
+align-items:center;
 }
 
-.hero-card h1{
-    font-size:4rem;
-    margin-bottom:10px;
+.hero-image img{
+width:300px;
+height:300px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid white;
 }
 
-.hero-card p{
-    font-size:1.1rem;
-    color:#555;
-    margin-bottom:30px;
+.hero-text h1{
+font-size:3rem;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+.typing{
+color:#3498db;
+margin:10px 0;
+height:40px;
+}
 
 .buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+margin-top:20px;
 }
 
 .btn{
-    padding:14px 30px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.4s ease;
+display:inline-block;
+padding:12px 25px;
+background:#3498db;
+color:white;
+text-decoration:none;
+border-radius:30px;
+margin-right:10px;
+transition:.4s;
 }
 
-.primary{
-    background:#2684ff;
-    color:white;
-}
-
-.primary:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 25px rgba(38,132,255,.3);
+.btn:hover{
+transform:translateY(-5px);
 }
 
 .secondary{
-    border:2px solid #2684ff;
-    color:#2684ff;
+background:transparent;
+border:2px solid #3498db;
+color:#3498db;
 }
-
-.secondary:hover{
-    background:#2684ff;
-    color:white;
-}
-
-/* =========================
-   SECTIONS
-========================= */
 
 section{
-    width:90%;
-    margin:auto;
-    margin-bottom:50px;
+padding:80px 10%;
 }
 
 .card{
-    padding:40px;
-    border-radius:25px;
-    transition:.4s ease;
-}
-
-.card:hover{
-    transform:translateY(-10px);
+padding:40px;
+border-radius:25px;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:2rem;
+text-align:center;
+margin-bottom:40px;
 }
 
-/* =========================
-   SKILLS
-========================= */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+.skills-grid,
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.skill{
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    background:rgba(255,255,255,0.4);
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:scale(1.05);
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
+.skill,
 .service{
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-    transition:.4s;
+padding:30px;
+text-align:center;
+border-radius:20px;
+transition:.4s;
 }
 
+.service i{
+font-size:2rem;
+margin-bottom:15px;
+color:#3498db;
+}
+
+.skill:hover,
 .service:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.contact-info{
-    text-align:center;
+.socials{
+margin-top:20px;
+display:flex;
+gap:20px;
 }
 
-.contact-info p{
-    margin:10px 0;
+.socials a{
+font-size:1.5rem;
+color:#3498db;
 }
-
-.contact-btn{
-    margin-top:20px;
-}
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#666;
+text-align:center;
+padding:30px;
 }
 
-/* =========================
-   FLOATING ANIMATION
-========================= */
-
-@keyframes float{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:all .8s ease;
 }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
-
-.hidden{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
-.show{
-    opacity:1;
-    transform:translateY(0);
+@media(max-width:900px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.hero-image img{
+width:220px;
+height:220px;
+}
 
-@media(max-width:768px){
+nav{
+flex-direction:column;
+gap:15px;
+}
 
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
 
-    .menu{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+.hero-text h1{
+font-size:2.2rem;
+}
 
-    .hero-card{
-        padding:40px 20px;
-    }
-
-    .hero-card h1{
-        font-size:2.5rem;
-    }
 }
