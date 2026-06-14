@@ -1,0 +1,299 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #f4f9ff,
+        #ffffff,
+        #eaf4ff
+    );
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+.glass{
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.4);
+    box-shadow:0 8px 32px rgba(31,38,135,0.12);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    width:90%;
+    left:50%;
+    transform:translateX(-50%);
+    top:20px;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 30px;
+    border-radius:20px;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#2684ff;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#2684ff;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.hero-card{
+    max-width:900px;
+    text-align:center;
+    padding:60px;
+    border-radius:30px;
+    animation:float 5s ease-in-out infinite;
+}
+
+.hero-card h1{
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.hero-card p{
+    font-size:1.1rem;
+    color:#555;
+    margin-bottom:30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s ease;
+}
+
+.primary{
+    background:#2684ff;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 25px rgba(38,132,255,.3);
+}
+
+.secondary{
+    border:2px solid #2684ff;
+    color:#2684ff;
+}
+
+.secondary:hover{
+    background:#2684ff;
+    color:white;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    width:90%;
+    margin:auto;
+    margin-bottom:50px;
+}
+
+.card{
+    padding:40px;
+    border-radius:25px;
+    transition:.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:2rem;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.skill{
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    background:rgba(255,255,255,0.4);
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.service{
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    transition:.4s;
+}
+
+.service:hover{
+    transform:translateY(-10px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-info{
+    text-align:center;
+}
+
+.contact-info p{
+    margin:10px 0;
+}
+
+.contact-btn{
+    margin-top:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+/* =========================
+   FLOATING ANIMATION
+========================= */
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-card{
+        padding:40px 20px;
+    }
+
+    .hero-card h1{
+        font-size:2.5rem;
+    }
+}
